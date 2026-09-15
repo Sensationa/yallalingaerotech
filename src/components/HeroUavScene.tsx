@@ -58,9 +58,7 @@ function FlyingWing({ colors, still }: { colors: SceneColors; still: boolean }) 
   });
 
   return <>
-    <line geometry={trail}>
-      <lineBasicMaterial color={colors.signal} transparent opacity={0.2} />
-    </line>
+    <primitive object={new THREE.Line(trail, new THREE.LineBasicMaterial({ color: colors.signal, transparent: true, opacity: 0.2 }))} />
     <group ref={craft} position={[2.4, 0, 0]} rotation={[1.16, -0.34, -0.12]} scale={0.78}>
       <mesh geometry={wing}>
         <meshPhysicalMaterial color={colors.metal} metalness={0.82} roughness={0.3} transparent opacity={0.42} transmission={0.16} thickness={0.25} side={THREE.DoubleSide} />
