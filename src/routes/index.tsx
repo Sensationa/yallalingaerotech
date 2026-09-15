@@ -6,15 +6,14 @@ import {
   Mail, MapPin, Menu, Phone, Radar, ShieldCheck, Terminal, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import resumeAsset from "@/assets/yallaling-resume.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Yallaling | Avionics Embedded Software Engineer" },
-      { name: "description", content: "Avionics and embedded software engineer with aerospace and defence experience in C, Ada, DO-178C, V&V, LDRA and Polyspace." },
-      { property: "og:title", content: "Yallaling | Avionics Embedded Software Engineer" },
-      { property: "og:description", content: "Aerospace and defence software engineering portfolio focused on safety-critical embedded systems." },
+      { title: "Avionics Embedded Software Engineer | Yallaling" },
+      { name: "description", content: "Yallaling is an avionics embedded software engineer with aerospace and defence experience in C, Ada, DO-178C, V&V, LDRA and Polyspace." },
+      { property: "og:title", content: "Avionics Embedded Software Engineer | Yallaling" },
+      { property: "og:description", content: "Avionics engineering portfolio covering safety-critical embedded software, DO-178C, and V&V." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -122,7 +121,7 @@ function Portfolio() {
           <div className="mt-9 flex flex-wrap gap-3">
             <Button size="lg" variant="signal" asChild><Link to="/resume"><Download /> View Resume</Link></Button>
             <Button size="lg" variant="console" asChild><a href="#projects">View Projects <ArrowDown /></a></Button>
-            <Button size="lg" variant="ghost" asChild><Link to="/professional-profile"><Linkedin /> Professional Profile</Link></Button>
+             <Button size="lg" variant="ghost" asChild><Link to="/professional-profile"><Linkedin /> LinkedIn Profile</Link></Button>
             <Button size="lg" variant="ghost" asChild><a href="https://github.com/Sensationa" target="_blank" rel="noreferrer"><Github /> GitHub</a></Button>
           </div>
         </div>
@@ -157,7 +156,7 @@ function Portfolio() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="relative space-y-3 before:absolute before:bottom-8 before:left-5 before:top-8 before:w-px before:bg-border">{experiences.map((exp, index) => <button key={exp.company} onClick={() => setActiveExperience(index)} className={`panel relative w-full rounded-md p-5 pl-14 text-left transition-colors ${activeExperience === index ? "signal-border" : "hover:border-primary/35"}`}><span className={`absolute left-[15px] top-7 size-3 rounded-full border-2 ${activeExperience === index ? "border-primary bg-primary" : "border-muted-foreground bg-card"}`} /><span className="flex flex-wrap items-center gap-2">{exp.current && <span className="rounded-sm bg-primary/15 px-2 py-1 font-display text-[10px] text-primary">CURRENT</span>}<span className="text-xs text-muted-foreground">{exp.date}</span></span><strong className="mt-3 block font-display text-lg">{exp.role}</strong><span className="mt-1 block text-sm text-primary">{exp.company}</span></button>)}</div>
           <article className="panel signal-border rounded-md p-6 md:p-8"><p className="technical-label text-xs text-primary">Selected role</p><h3 className="mt-3 font-display text-2xl font-semibold">{selectedExperience.role}</h3><p className="mt-2 text-sm text-muted-foreground">{selectedExperience.company} · {selectedExperience.date}</p><ul className="mt-7 space-y-4">{selectedExperience.bullets.map((bullet) => <li key={bullet} className="flex gap-3 text-sm leading-6 text-muted-foreground"><CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />{bullet}</li>)}</ul><div className="mt-7 flex flex-wrap gap-2">{selectedExperience.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}</div></article>
-        </div></div>
+        </div><div className="mt-8 flex justify-center"><Button variant="console" asChild><Link to="/career">View full career timeline <ArrowRight /></Link></Button></div></div>
       </section>
 
       <section id="projects" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><SectionHeading eyebrow="Selected work / 04" title="Engineering" accent="Projects" intro="Professional and independent work across embedded avionics, full-stack systems, and machine learning." />
@@ -170,12 +169,12 @@ function Portfolio() {
         <div className="mt-6 grid gap-3 sm:grid-cols-2">{["Cyber Security Certification — C-DAC", "Database Management System Certification — Infosys Springboard", "C++ Programming Certification — Udemy", "AWS Cloud Practitioner Course — Cloud Institution"].map((cert) => <div key={cert} className="panel flex items-center gap-3 rounded-md p-4 text-sm"><Award className="size-4 shrink-0 text-warning" />{cert}</div>)}</div>
       </div></section>
 
-      <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div className="panel signal-border overflow-hidden rounded-md"><div className="grid lg:grid-cols-[1.2fr_0.8fr]"><div className="p-7 md:p-12"><p className="technical-label text-xs text-primary">Contact / 06</p><h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold md:text-5xl">Let’s build reliable systems.</h2><p className="mt-5 max-w-xl leading-7 text-muted-foreground">Open to conversations about avionics, embedded systems, aerospace and defence software, and broader software engineering opportunities.</p><div className="mt-8 flex flex-wrap gap-3"><Button variant="signal" size="lg" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Send Email</a></Button><Button variant="console" size="lg" asChild><a href={resumeAsset.url} download="Yallaling-Resume.pdf"><Download /> Download Resume</a></Button></div></div>
+      <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div className="panel signal-border overflow-hidden rounded-md"><div className="grid lg:grid-cols-[1.2fr_0.8fr]"><div className="p-7 md:p-12"><p className="technical-label text-xs text-primary">Contact / 06</p><h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold md:text-5xl">Let’s build reliable systems.</h2><p className="mt-5 max-w-xl leading-7 text-muted-foreground">Open to conversations about avionics, embedded systems, aerospace and defence software, and broader software engineering opportunities.</p><div className="mt-8 flex flex-wrap gap-3"><Button variant="signal" size="lg" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Send Email</a></Button><Button variant="console" size="lg" asChild><a href="/Yallaling-Avionics-Resume.pdf" download="Yallaling-Avionics-Resume.pdf"><Download /> Download Resume</a></Button></div></div>
           <div className="border-t border-border bg-secondary/30 p-7 md:p-10 lg:border-l lg:border-t-0"><div className="space-y-4">{[
             [Mail, "Email", "ybhsathkhed@gmail.com", "mailto:ybhsathkhed@gmail.com"], [Phone, "Phone", "+91 7349038090", "tel:+917349038090"], [Linkedin, "LinkedIn", "yallaling03", "https://www.linkedin.com/in/yallaling03/"], [Github, "GitHub", "Sensationa", "https://github.com/Sensationa"], [Code2, "CodeChef", "yallaling143", "https://www.codechef.com/users/yallaling143"], [ExternalLink, "Portfolio", "yallalingtechworld.lovable.app", "https://yallalingtechworld.lovable.app/"]
           ].map(([Icon, label, text, href]) => { const LinkIcon = Icon as typeof Mail; return <a key={String(label)} href={String(href)} target={String(href).startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b border-border pb-4 text-sm hover:text-primary"><LinkIcon className="size-4 text-primary" /><span className="min-w-0"><span className="block text-xs text-muted-foreground">{String(label)}</span><span className="block truncate">{String(text)}</span></span><ArrowRight className="size-4" /></a>; })}</div></div></div></div>
       </section>
     </main>
-    <footer className="border-t border-border px-5 py-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 text-xs text-muted-foreground sm:flex-row"><span>© 2026 Yallaling. Avionics & Embedded Software Engineer.</span><span className="font-display text-primary">SYSTEM STATUS: READY</span></div></footer>
+     <footer className="border-t border-border px-5 py-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-xs text-muted-foreground sm:flex-row"><span>© 2026 Yallaling. Avionics & Embedded Software Engineer.</span><div className="flex flex-wrap gap-5"><Link to="/aerospace-defence-software" className="hover:text-primary">Aerospace & Defence</Link><Link to="/professional-profile" className="hover:text-primary">Professional Profile</Link><span className="font-display text-primary">SYSTEM STATUS: READY</span></div></div></footer>
   </div>;
 }
