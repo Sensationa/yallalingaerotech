@@ -13,3 +13,4 @@
 - [x] Add full career timeline page and link it from resume
 - [x] Verify all new pages, PDF pages, and navigation
 - [x] Add and verify a lightweight 3D UAV hero background with mobile safeguards
+- [ ] Extend the interactive aerospace background across the homepage
