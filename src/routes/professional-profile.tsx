@@ -45,7 +45,7 @@ function ProfessionalProfile() {
     <div className="mx-auto max-w-6xl">
       <nav className="flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6" aria-label="Profile navigation">
         <Button variant="ghost" asChild><Link to="/"><ArrowLeft /> Portfolio</Link></Button>
-        <Button variant="signal" asChild><a href="https://www.linkedin.com/in/yallaling03/" target="_blank" rel="noopener noreferrer"><Linkedin /> Open LinkedIn <ArrowUpRight /></a></Button>
+        <Button variant="signal" asChild><a href="https://www.linkedin.com/in/yallaling03/" target="_top" rel="noopener noreferrer"><Linkedin /> Open LinkedIn <ArrowUpRight /></a></Button>
       </nav>
 
       <header className="grid gap-10 py-16 lg:grid-cols-[1.25fr_0.75fr] lg:py-24">
@@ -85,7 +85,7 @@ function ProfessionalProfile() {
 
       <footer className="flex flex-wrap items-center justify-between gap-5 border-t border-border py-10">
         <div><p className="font-display text-xl font-semibold">Connect professionally</p><p className="mt-1 text-sm text-muted-foreground">Avionics, embedded systems, aerospace and defence software opportunities.</p></div>
-         <div className="flex flex-wrap gap-3"><Button variant="console" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Email</a></Button><Button variant="signal" asChild><a href="https://www.linkedin.com/in/yallaling03/" target="_blank" rel="noopener noreferrer"><Linkedin /> LinkedIn</a></Button></div>
+         <div className="flex flex-wrap gap-3"><Button variant="console" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Email</a></Button><Button variant="signal" asChild><a href="https://www.linkedin.com/in/yallaling03/" target="_top" rel="noopener noreferrer"><Linkedin /> LinkedIn</a></Button></div>
       </footer>
     </div>
   </main>;
