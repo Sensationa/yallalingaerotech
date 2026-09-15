@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroUav } from "@/components/HeroUav";
+import { PageAtmosphere } from "@/components/PageAtmosphere";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -111,7 +112,8 @@ function Portfolio() {
       {menuOpen && <div className="border-t border-border bg-background px-5 py-5 lg:hidden">{nav.map((item) => <a key={item} onClick={() => setMenuOpen(false)} href={`#${item.toLowerCase()}`} className="block border-b border-border py-3 font-display text-sm text-muted-foreground">{item}</a>)}</div>}
     </header>
 
-    <main>
+    <main className="portfolio-content relative isolate">
+      <PageAtmosphere />
       <section id="home" className="relative mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-16 lg:min-h-[780px] lg:px-8">
         <HeroUav />
         <div className="relative z-10 max-w-4xl">
