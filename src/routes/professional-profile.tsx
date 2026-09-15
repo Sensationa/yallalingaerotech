@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/professional-profile")({
   head: () => ({
     meta: [
-      { title: "Yallaling — Avionics Embedded Software Engineer" },
-      { name: "description", content: "Professional profile of Yallaling, an avionics and embedded software engineer experienced in C, Ada, DO-178C, V&V, LDRA and Polyspace." },
+      { title: "Avionics Engineer Profile — Yallaling" },
+      { name: "description", content: "Meet Yallaling, an avionics embedded software engineer in Bengaluru working with C, Ada, DO-178C, V&V, LDRA and Polyspace." },
       { name: "keywords", content: "avionics engineer, embedded software engineer, DO-178C engineer, V&V engineer, aerospace software engineer" },
-      { property: "og:title", content: "Yallaling — Avionics Embedded Software Engineer" },
-      { property: "og:description", content: "Aerospace and defence software profile focused on embedded development, DO-178C and Verification & Validation." },
+      { property: "og:title", content: "Avionics Engineer Profile — Yallaling" },
+      { property: "og:description", content: "Professional avionics profile focused on embedded development, DO-178C, and V&V." },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/professional-profile" },
       { name: "twitter:card", content: "summary_large_image" },

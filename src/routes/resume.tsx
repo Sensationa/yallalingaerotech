@@ -1,17 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { ArrowLeft, Award, BriefcaseBusiness, CheckCircle2, Download, GraduationCap, Languages } from "lucide-react";
+import { ArrowLeft, ArrowRight, Award, BriefcaseBusiness, CheckCircle2, Download, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import resumeAsset from "@/assets/yallaling-resume.pdf.asset.json";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
     meta: [
-      { title: "Resume — Yallaling | Avionics Engineer" },
-      { name: "description", content: "Resume of Yallaling, an avionics and embedded software engineer with DO-178C, V&V, C, Ada, LDRA and Polyspace experience." },
+      { title: "Avionics Engineer Resume — Yallaling" },
+      { name: "description", content: "Yallaling’s avionics engineer resume: embedded C and Ada, DO-178C, V&V, LDRA, Polyspace, experience, education and certifications." },
       { name: "keywords", content: "avionics engineer resume, embedded software engineer resume, DO-178C resume, V&V engineer, C Ada engineer" },
-      { property: "og:title", content: "Resume — Yallaling | Avionics Engineer" },
-      { property: "og:description", content: "Work experience, education, skills and certifications for avionics embedded software engineer Yallaling." },
+      { property: "og:title", content: "Avionics Engineer Resume — Yallaling" },
+      { property: "og:description", content: "Embedded avionics experience, DO-178C and V&V skills, education, and certifications." },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/resume" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -39,7 +38,7 @@ function ResumePage() {
     <div className="mx-auto max-w-5xl">
       <nav className="flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6" aria-label="Resume navigation">
         <Button variant="ghost" asChild><Link to="/"><ArrowLeft /> Portfolio</Link></Button>
-        <Button variant="signal" asChild><a href={resumeAsset.url} download="Yallaling-Resume.pdf"><Download /> Download PDF</a></Button>
+        <Button variant="signal" asChild><a href="/Yallaling-Avionics-Resume.pdf" download="Yallaling-Avionics-Resume.pdf"><Download /> Download PDF</a></Button>
       </nav>
 
       <header className="py-14 md:py-20">
@@ -50,6 +49,7 @@ function ResumePage() {
       </header>
 
       <ResumeSection icon={BriefcaseBusiness} label="Experience" title="Professional experience">
+        <div className="mb-5 flex justify-end"><Button variant="console" asChild><Link to="/career"><BriefcaseBusiness /> Full career timeline <ArrowRight /></Link></Button></div>
         <div className="space-y-5">{roles.map((role, index) => <article key={role.company} className={`panel rounded-md p-6 md:p-8 ${index === 0 ? "signal-border" : ""}`}><div className="flex flex-wrap items-start justify-between gap-3"><div><h3 className="font-display text-xl font-semibold">{role.title}</h3><p className="mt-1 text-sm text-primary">{role.company}</p></div><span className="font-display text-xs text-muted-foreground">{role.date}</span></div><ul className="mt-6 space-y-3">{role.bullets.map((bullet) => <li key={bullet} className="flex gap-3 text-sm leading-6 text-muted-foreground"><CheckCircle2 className="mt-1 size-4 shrink-0 text-primary" />{bullet}</li>)}</ul></article>)}</div>
       </ResumeSection>
 
@@ -69,9 +69,6 @@ function ResumePage() {
         <div className="grid gap-4 md:grid-cols-2">{["Cyber Security Certification — C-DAC (Information Security, Network Security)", "Database Management System Certification — Infosys Springboard (SQL, Relational Databases)", "C++ Programming Certification — Udemy (OOP, Data Structures)", "AWS Cloud Practitioner Course — Cloud Institution (Cloud Fundamentals)", "Secured 10th place in DSCE Coding Bootcamp", "Solved 500+ DSA problems across LeetCode, CodeChef, and GeeksforGeeks"].map((item) => <div key={item} className="panel flex gap-3 rounded-md p-5 text-sm leading-6"><Award className="mt-1 size-4 shrink-0 text-warning" />{item}</div>)}</div>
       </ResumeSection>
 
-      <ResumeSection icon={Languages} label="Languages" title="Languages">
-        <div className="flex flex-wrap gap-3">{["Kannada", "English", "Hindi"].map((language) => <span key={language} className="rounded-sm border border-primary/30 bg-primary/5 px-4 py-2 font-display text-sm text-primary">{language}</span>)}</div>
-      </ResumeSection>
     </div>
   </main>;
 }
