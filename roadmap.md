@@ -17,3 +17,6 @@
 - [x] Add source-backed technical blog and article pages
 - [x] Add blog discovery links, metadata, and sitemap coverage
 - [x] Verify blog pages, responsive layouts, metadata, and sitemap
+- [ ] Replace resume view/download with the attached PDF
+- [ ] Fix direct LinkedIn navigation and update the live portfolio link
+- [ ] Verify resume, LinkedIn, and portfolio actions
