@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ArrowLeft, ArrowRight, Award, BriefcaseBusiness, CheckCircle2, Download, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import resumeAsset from "@/assets/Yallaling-Resume.pdf.asset.json";
 
 export const Route = createFileRoute("/resume")({
   staticData: { sitemap: true },
@@ -13,10 +14,10 @@ export const Route = createFileRoute("/resume")({
       { property: "og:title", content: "Avionics Engineer Resume — Yallaling" },
       { property: "og:description", content: "Embedded avionics experience, DO-178C and V&V skills, education, and certifications." },
       { property: "og:type", content: "profile" },
-      { property: "og:url", content: "https://avionics-code-haven.lovable.app/resume" },
+      { property: "og:url", content: "https://yallalingaerotech.lovable.app/resume" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://avionics-code-haven.lovable.app/resume" }],
+    links: [{ rel: "canonical", href: "https://yallalingaerotech.lovable.app/resume" }],
   }),
   component: ResumePage,
 });
@@ -39,7 +40,7 @@ function ResumePage() {
     <div className="mx-auto max-w-5xl">
       <nav className="flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6" aria-label="Resume navigation">
         <Button variant="ghost" asChild><Link to="/"><ArrowLeft /> Portfolio</Link></Button>
-        <Button variant="signal" asChild><a href="/Yallaling-Avionics-Resume.pdf" download="Yallaling-Avionics-Resume.pdf"><Download /> Download PDF</a></Button>
+        <div className="flex flex-wrap gap-3"><Button variant="console" asChild><a href={resumeAsset.url} target="_blank" rel="noopener noreferrer"><ArrowRight /> View PDF</a></Button><Button variant="signal" asChild><a href={resumeAsset.url} download="Yallaling-Resume.pdf"><Download /> Download PDF</a></Button></div>
       </nav>
 
       <header className="py-14 md:py-20">

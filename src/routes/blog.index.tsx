@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { PageAtmosphere } from "@/components/PageAtmosphere";
 import { blogPosts } from "@/lib/blog";
 
-const origin = "https://avionics-code-haven.lovable.app";
+const origin = "https://yallalingaerotech.lovable.app";
 
 export const Route = createFileRoute("/blog/")({
   staticData: { sitemap: true },

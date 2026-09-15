@@ -9,9 +9,9 @@ export const Route = createFileRoute("/aerospace-defence-software")({
     { name: "description", content: "Avionics and defence software expertise in embedded C, Ada, DO-178C, V&V, static analysis, LDRA and Polyspace from engineer Yallaling." },
     { property: "og:title", content: "Aerospace & Defence Software Engineer | Yallaling" },
     { property: "og:description", content: "Embedded avionics, DO-178C, V&V, LDRA, and Polyspace experience for aerospace and defence software." },
-    { property: "og:type", content: "website" }, { property: "og:url", content: "https://avionics-code-haven.lovable.app/aerospace-defence-software" },
+    { property: "og:type", content: "website" }, { property: "og:url", content: "https://yallalingaerotech.lovable.app/aerospace-defence-software" },
     { name: "twitter:card", content: "summary_large_image" },
-  ], links: [{ rel: "canonical", href: "https://avionics-code-haven.lovable.app/aerospace-defence-software" }] }),
+  ], links: [{ rel: "canonical", href: "https://yallalingaerotech.lovable.app/aerospace-defence-software" }] }),
   component: AerospacePage,
 });
 

@@ -9,9 +9,9 @@ export const Route = createFileRoute("/career")({
     { name: "description", content: "Yallaling’s career timeline in avionics embedded software and full-stack development, with dates, responsibilities, DO-178C, V&V and tools." },
     { property: "og:title", content: "Avionics Engineering Career — Yallaling" },
     { property: "og:description", content: "Career timeline covering embedded avionics, DO-178C, V&V, and software development." },
-    { property: "og:type", content: "profile" }, { property: "og:url", content: "https://avionics-code-haven.lovable.app/career" },
+    { property: "og:type", content: "profile" }, { property: "og:url", content: "https://yallalingaerotech.lovable.app/career" },
     { name: "twitter:card", content: "summary_large_image" },
-  ], links: [{ rel: "canonical", href: "https://avionics-code-haven.lovable.app/career" }] }),
+  ], links: [{ rel: "canonical", href: "https://yallalingaerotech.lovable.app/career" }] }),
   component: CareerPage,
 });
 

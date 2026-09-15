@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://avionics-code-haven.lovable.app/sitemap.xml
+Sitemap: https://yallalingaerotech.lovable.app/sitemap.xml
