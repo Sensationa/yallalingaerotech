@@ -6,7 +6,6 @@ import {
   Mail, MapPin, Menu, Phone, Radar, ShieldCheck, Terminal, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import resumeAsset from "@/assets/yallaling-resume.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,7 +121,7 @@ function Portfolio() {
           <div className="mt-9 flex flex-wrap gap-3">
             <Button size="lg" variant="signal" asChild><Link to="/resume"><Download /> View Resume</Link></Button>
             <Button size="lg" variant="console" asChild><a href="#projects">View Projects <ArrowDown /></a></Button>
-             <Button size="lg" variant="ghost" asChild><a href="https://www.linkedin.com/in/yallaling03/" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn Profile</a></Button>
+             <Button size="lg" variant="ghost" asChild><Link to="/professional-profile"><Linkedin /> LinkedIn Profile</Link></Button>
             <Button size="lg" variant="ghost" asChild><a href="https://github.com/Sensationa" target="_blank" rel="noreferrer"><Github /> GitHub</a></Button>
           </div>
         </div>
@@ -170,7 +169,7 @@ function Portfolio() {
         <div className="mt-6 grid gap-3 sm:grid-cols-2">{["Cyber Security Certification — C-DAC", "Database Management System Certification — Infosys Springboard", "C++ Programming Certification — Udemy", "AWS Cloud Practitioner Course — Cloud Institution"].map((cert) => <div key={cert} className="panel flex items-center gap-3 rounded-md p-4 text-sm"><Award className="size-4 shrink-0 text-warning" />{cert}</div>)}</div>
       </div></section>
 
-      <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div className="panel signal-border overflow-hidden rounded-md"><div className="grid lg:grid-cols-[1.2fr_0.8fr]"><div className="p-7 md:p-12"><p className="technical-label text-xs text-primary">Contact / 06</p><h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold md:text-5xl">Let’s build reliable systems.</h2><p className="mt-5 max-w-xl leading-7 text-muted-foreground">Open to conversations about avionics, embedded systems, aerospace and defence software, and broader software engineering opportunities.</p><div className="mt-8 flex flex-wrap gap-3"><Button variant="signal" size="lg" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Send Email</a></Button><Button variant="console" size="lg" asChild><a href={resumeAsset.url} download="Yallaling-Resume.pdf"><Download /> Download Resume</a></Button></div></div>
+      <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div className="panel signal-border overflow-hidden rounded-md"><div className="grid lg:grid-cols-[1.2fr_0.8fr]"><div className="p-7 md:p-12"><p className="technical-label text-xs text-primary">Contact / 06</p><h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold md:text-5xl">Let’s build reliable systems.</h2><p className="mt-5 max-w-xl leading-7 text-muted-foreground">Open to conversations about avionics, embedded systems, aerospace and defence software, and broader software engineering opportunities.</p><div className="mt-8 flex flex-wrap gap-3"><Button variant="signal" size="lg" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Send Email</a></Button><Button variant="console" size="lg" asChild><a href="/Yallaling-Avionics-Resume.pdf" download="Yallaling-Avionics-Resume.pdf"><Download /> Download Resume</a></Button></div></div>
           <div className="border-t border-border bg-secondary/30 p-7 md:p-10 lg:border-l lg:border-t-0"><div className="space-y-4">{[
             [Mail, "Email", "ybhsathkhed@gmail.com", "mailto:ybhsathkhed@gmail.com"], [Phone, "Phone", "+91 7349038090", "tel:+917349038090"], [Linkedin, "LinkedIn", "yallaling03", "https://www.linkedin.com/in/yallaling03/"], [Github, "GitHub", "Sensationa", "https://github.com/Sensationa"], [Code2, "CodeChef", "yallaling143", "https://www.codechef.com/users/yallaling143"], [ExternalLink, "Portfolio", "yallalingtechworld.lovable.app", "https://yallalingtechworld.lovable.app/"]
           ].map(([Icon, label, text, href]) => { const LinkIcon = Icon as typeof Mail; return <a key={String(label)} href={String(href)} target={String(href).startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b border-border pb-4 text-sm hover:text-primary"><LinkIcon className="size-4 text-primary" /><span className="min-w-0"><span className="block text-xs text-muted-foreground">{String(label)}</span><span className="block truncate">{String(text)}</span></span><ArrowRight className="size-4" /></a>; })}</div></div></div></div>
