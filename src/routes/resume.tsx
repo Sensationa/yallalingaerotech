@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Award, BriefcaseBusiness, CheckCircle2, Download
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/resume")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Avionics Engineer Resume — Yallaling" },

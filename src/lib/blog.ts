@@ -6,6 +6,7 @@ export type BlogSection = {
 
 export type BlogPost = {
   slug: string;
+  path: "/blog/avionics-software-engineering" | "/blog/do-178c-software-lifecycle" | "/blog/embedded-c-avionics" | "/blog/verification-validation-avionics";
   category: string;
   title: string;
   description: string;
@@ -20,6 +21,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "avionics-software-engineering",
+    path: "/blog/avionics-software-engineering",
     category: "Avionics",
     title: "What Avionics Software Engineering Involves",
     description: "An avionics software engineer’s overview of embedded development, requirements, verification, and assurance for airborne software.",
@@ -37,6 +39,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "do-178c-software-lifecycle",
+    path: "/blog/do-178c-software-lifecycle",
     category: "DO-178C",
     title: "DO-178C Software Lifecycle: A Practical Overview",
     description: "A concise guide to DO-178C planning, development, verification, configuration management, quality assurance, and certification liaison.",
@@ -54,6 +57,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "embedded-c-avionics",
+    path: "/blog/embedded-c-avionics",
     category: "Embedded C",
     title: "Embedded C Practices for Reliable Avionics Software",
     description: "Explore Embedded C practices that support understandable, analyzable, and verifiable avionics software without oversimplifying safety assurance.",
@@ -71,6 +75,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "verification-validation-avionics",
+    path: "/blog/verification-validation-avionics",
     category: "V&V",
     title: "Verification and Validation in Avionics Software",
     description: "Learn how verification and validation build confidence in avionics software through requirements, reviews, analysis, testing, and evidence.",

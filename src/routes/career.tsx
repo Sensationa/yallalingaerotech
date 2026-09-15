@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle2, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/career")({
+  staticData: { sitemap: true },
   head: () => ({ meta: [
     { title: "Avionics Engineering Career — Yallaling" },
     { name: "description", content: "Yallaling’s career timeline in avionics embedded software and full-stack development, with dates, responsibilities, DO-178C, V&V and tools." },

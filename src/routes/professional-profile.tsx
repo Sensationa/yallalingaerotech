@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight, BriefcaseBusiness, CheckCircle2, Linkedin, Mai
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/professional-profile")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Avionics Engineer Profile — Yallaling" },
