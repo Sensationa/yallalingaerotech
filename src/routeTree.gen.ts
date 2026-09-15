@@ -59,26 +59,26 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
 } as any)
 const BlogAvionicsSoftwareEngineeringRoute =
   BlogAvionicsSoftwareEngineeringRouteImport.update({
-    id: '/avionics-software-engineering',
-    path: '/avionics-software-engineering',
-    getParentRoute: () => BlogRoute,
+    id: '/blog/avionics-software-engineering',
+    path: '/blog/avionics-software-engineering',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const BlogDo178cSoftwareLifecycleRoute =
   BlogDo178cSoftwareLifecycleRouteImport.update({
-    id: '/do-178c-software-lifecycle',
-    path: '/do-178c-software-lifecycle',
-    getParentRoute: () => BlogRoute,
+    id: '/blog/do-178c-software-lifecycle',
+    path: '/blog/do-178c-software-lifecycle',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const BlogEmbeddedCAvionicsRoute = BlogEmbeddedCAvionicsRouteImport.update({
-  id: '/embedded-c-avionics',
-  path: '/embedded-c-avionics',
-  getParentRoute: () => BlogRoute,
+  id: '/blog/embedded-c-avionics',
+  path: '/blog/embedded-c-avionics',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BlogVerificationValidationAvionicsRoute =
   BlogVerificationValidationAvionicsRouteImport.update({
-    id: '/verification-validation-avionics',
-    path: '/verification-validation-avionics',
-    getParentRoute: () => BlogRoute,
+    id: '/blog/verification-validation-avionics',
+    path: '/blog/verification-validation-avionics',
+    getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -170,6 +170,10 @@ export interface RootRouteChildren {
   ProfessionalProfileRoute: typeof ProfessionalProfileRoute
   ResumeRoute: typeof ResumeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BlogAvionicsSoftwareEngineeringRoute: typeof BlogAvionicsSoftwareEngineeringRoute
+  BlogDo178cSoftwareLifecycleRoute: typeof BlogDo178cSoftwareLifecycleRoute
+  BlogEmbeddedCAvionicsRoute: typeof BlogEmbeddedCAvionicsRoute
+  BlogVerificationValidationAvionicsRoute: typeof BlogVerificationValidationAvionicsRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
@@ -226,31 +230,31 @@ declare module '@tanstack/react-router' {
     }
     '/blog/avionics-software-engineering': {
       id: '/blog/avionics-software-engineering'
-      path: '/avionics-software-engineering'
+      path: '/blog/avionics-software-engineering'
       fullPath: '/blog/avionics-software-engineering'
       preLoaderRoute: typeof BlogAvionicsSoftwareEngineeringRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/do-178c-software-lifecycle': {
       id: '/blog/do-178c-software-lifecycle'
-      path: '/do-178c-software-lifecycle'
+      path: '/blog/do-178c-software-lifecycle'
       fullPath: '/blog/do-178c-software-lifecycle'
       preLoaderRoute: typeof BlogDo178cSoftwareLifecycleRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/embedded-c-avionics': {
       id: '/blog/embedded-c-avionics'
-      path: '/embedded-c-avionics'
+      path: '/blog/embedded-c-avionics'
       fullPath: '/blog/embedded-c-avionics'
       preLoaderRoute: typeof BlogEmbeddedCAvionicsRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/verification-validation-avionics': {
       id: '/blog/verification-validation-avionics'
-      path: '/verification-validation-avionics'
+      path: '/blog/verification-validation-avionics'
       fullPath: '/blog/verification-validation-avionics'
       preLoaderRoute: typeof BlogVerificationValidationAvionicsRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -262,6 +266,11 @@ const rootRouteChildren: RootRouteChildren = {
   ProfessionalProfileRoute: ProfessionalProfileRoute,
   ResumeRoute: ResumeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BlogAvionicsSoftwareEngineeringRoute: BlogAvionicsSoftwareEngineeringRoute,
+  BlogDo178cSoftwareLifecycleRoute: BlogDo178cSoftwareLifecycleRoute,
+  BlogEmbeddedCAvionicsRoute: BlogEmbeddedCAvionicsRoute,
+  BlogVerificationValidationAvionicsRoute:
+    BlogVerificationValidationAvionicsRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
