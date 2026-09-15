@@ -11,6 +11,7 @@ import { PageAtmosphere } from "@/components/PageAtmosphere";
 
 const linkedInUrl = "https://www.linkedin.com/in/yallaling03/";
 const portfolioUrl = "https://yallalingaerotech.lovable.app";
+const emailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=ybhsathkhed%40gmail.com";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -109,7 +110,7 @@ function Portfolio() {
         </a>
         <div className="hidden items-center gap-8 lg:flex">
           {nav.map((item) => <a key={item} href={`#${item.toLowerCase()}`} className="font-display text-sm text-muted-foreground transition-colors hover:text-primary">{item}</a>)}
-          <Button variant="signal" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Contact</a></Button>
+          <Button variant="signal" asChild><a href={emailUrl} target="_top"><Mail /> Contact</a></Button>
         </div>
         <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setMenuOpen((v) => !v)} aria-expanded={menuOpen} aria-label="Toggle navigation">{menuOpen ? <X /> : <Menu />}</Button>
       </nav>
@@ -126,9 +127,9 @@ function Portfolio() {
           <h1 className="text-balance font-display text-5xl font-semibold leading-[1.04] text-foreground md:text-7xl lg:text-[5.5rem]">Yallaling<br /><span className="text-primary">Avionics</span> Software Engineer<span aria-hidden="true" className="ml-2 inline-block h-[0.8em] w-1 animate-[blink_1s_steps(1)_infinite] bg-primary align-baseline" /></h1>
           <p className="mt-6 max-w-3xl border-l-2 border-primary pl-5 text-base leading-8 text-muted-foreground md:text-lg">Building and verifying safety-critical embedded software with C, C++, Embedded C, and Ada—grounded in DO-178C, V&V, and industry analysis tools.</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Button size="lg" variant="signal" asChild><a href="/resume"><Download /> View Resume</a></Button>
+            <Button size="lg" variant="signal" asChild><a href="/resume" target="_top"><Download /> View Resume</a></Button>
             <Button size="lg" variant="console" asChild><a href="#projects">View Projects <ArrowDown /></a></Button>
-             <Button size="lg" variant="ghost" asChild><a href={linkedInUrl} target="_blank" rel="noopener noreferrer"><Linkedin /> LinkedIn</a></Button>
+             <Button size="lg" variant="ghost" asChild><a href={linkedInUrl} target="_top"><Linkedin /> LinkedIn</a></Button>
              <Button size="lg" variant="ghost" asChild><Link to="/blog"><BookOpen /> Technical Blog</Link></Button>
             <Button size="lg" variant="ghost" asChild><a href="https://github.com/Sensationa" target="_blank" rel="noreferrer"><Github /> GitHub</a></Button>
           </div>
@@ -177,10 +178,10 @@ function Portfolio() {
         <div className="mt-6 grid gap-3 sm:grid-cols-2">{["Cyber Security Certification — C-DAC", "Database Management System Certification — Infosys Springboard", "C++ Programming Certification — Udemy", "AWS Cloud Practitioner Course — Cloud Institution"].map((cert) => <div key={cert} className="panel flex items-center gap-3 rounded-md p-4 text-sm"><Award className="size-4 shrink-0 text-warning" />{cert}</div>)}</div>
       </div></section>
 
-       <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div className="panel signal-border overflow-hidden rounded-md"><div className="grid lg:grid-cols-[1.2fr_0.8fr]"><div className="p-7 md:p-12"><p className="technical-label text-xs text-primary">Contact / 06</p><h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold md:text-5xl">Let’s build reliable systems.</h2><p className="mt-5 max-w-xl leading-7 text-muted-foreground">Open to conversations about avionics, embedded systems, aerospace and defence software, and broader software engineering opportunities.</p><div className="mt-8 flex flex-wrap gap-3"><Button variant="signal" size="lg" asChild><a href="mailto:ybhsathkhed@gmail.com"><Mail /> Send Email</a></Button><Button variant="console" size="lg" asChild><a href="/Yallaling-Avionics-Resume.pdf" download="Yallaling-Resume.pdf"><Download /> Download Resume</a></Button></div></div>
+       <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32"><div className="panel signal-border overflow-hidden rounded-md"><div className="grid lg:grid-cols-[1.2fr_0.8fr]"><div className="p-7 md:p-12"><p className="technical-label text-xs text-primary">Contact / 06</p><h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold md:text-5xl">Let’s build reliable systems.</h2><p className="mt-5 max-w-xl leading-7 text-muted-foreground">Open to conversations about avionics, embedded systems, aerospace and defence software, and broader software engineering opportunities.</p><div className="mt-8 flex flex-wrap gap-3"><Button variant="signal" size="lg" asChild><a href={emailUrl} target="_top"><Mail /> Send Email</a></Button><Button variant="console" size="lg" asChild><a href="/Yallaling-Avionics-Resume.pdf" target="_top"><Download /> View Resume PDF</a></Button><Button variant="ghost" size="lg" asChild><a href="/Yallaling-Avionics-Resume.pdf" download="Yallaling-Resume.pdf"><Download /> Download Resume</a></Button></div></div>
           <div className="border-t border-border bg-secondary/30 p-7 md:p-10 lg:border-l lg:border-t-0"><div className="space-y-4">{[
-             [Mail, "Email", "ybhsathkhed@gmail.com", "mailto:ybhsathkhed@gmail.com"], [Phone, "Phone", "+91 7349038090", "tel:+917349038090"], [Linkedin, "LinkedIn", "yallaling03", linkedInUrl], [Github, "GitHub", "Sensationa", "https://github.com/Sensationa"], [Code2, "CodeChef", "yallaling143", "https://www.codechef.com/users/yallaling143"], [ExternalLink, "Portfolio", "yallalingaerotech.lovable.app", portfolioUrl]
-          ].map(([Icon, label, text, href]) => { const LinkIcon = Icon as typeof Mail; const external = String(href).startsWith("http"); return <a key={String(label)} href={String(href)} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b border-border pb-4 text-sm hover:text-primary"><LinkIcon className="size-4 text-primary" /><span className="min-w-0"><span className="block text-xs text-muted-foreground">{String(label)}</span><span className="block truncate">{String(text)}</span></span><ArrowRight className="size-4" /></a>; })}</div></div></div></div>
+             [Mail, "Email", "ybhsathkhed@gmail.com", emailUrl], [Phone, "Phone", "+91 7349038090", "tel:+917349038090"], [Linkedin, "LinkedIn", "yallaling03", linkedInUrl], [Github, "GitHub", "Sensationa", "https://github.com/Sensationa"], [Code2, "CodeChef", "yallaling143", "https://www.codechef.com/users/yallaling143"], [ExternalLink, "Portfolio", "yallalingaerotech.lovable.app", portfolioUrl]
+           ].map(([Icon, label, text, href]) => { const LinkIcon = Icon as typeof Mail; const external = String(href).startsWith("http"); return <a key={String(label)} href={String(href)} target={external ? "_top" : undefined} className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b border-border pb-4 text-sm hover:text-primary"><LinkIcon className="size-4 text-primary" /><span className="min-w-0"><span className="block text-xs text-muted-foreground">{String(label)}</span><span className="block truncate">{String(text)}</span></span><ArrowRight className="size-4" /></a>; })}</div></div></div></div>
       </section>
     </main>
      <footer className="border-t border-border px-5 py-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-xs text-muted-foreground sm:flex-row"><span>© 2026 Yallaling. Avionics & Embedded Software Engineer.</span><div className="flex flex-wrap gap-5"><Link to="/aerospace-defence-software" className="hover:text-primary">Aerospace & Defence</Link><Link to="/blog" className="hover:text-primary">Technical Blog</Link><Link to="/professional-profile" className="hover:text-primary">Professional Profile</Link><span className="font-display text-primary">SYSTEM STATUS: READY</span></div></div></footer>
