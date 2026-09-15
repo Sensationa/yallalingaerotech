@@ -77,13 +77,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Yallaling | Avionics Software Engineer" },
-      { name: "description", content: "Portfolio of Yallaling, an avionics and embedded software engineer in aerospace and defence." },
       { name: "author", content: "Yallaling" },
-      { property: "og:title", content: "Yallaling | Avionics Software Engineer" },
-      { property: "og:description", content: "Avionics and embedded software engineering portfolio focused on C, Ada, DO-178C and V&V." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:site_name", content: "Yallaling Engineering Portfolio" },
     ],
     links: [
       {

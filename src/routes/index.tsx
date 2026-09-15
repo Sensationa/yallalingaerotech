@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowDown, ArrowRight, Award, BriefcaseBusiness, CheckCircle2, ChevronDown,
@@ -16,8 +16,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Yallaling | Avionics Embedded Software Engineer" },
       { property: "og:description", content: "Aerospace and defence software engineering portfolio focused on safety-critical embedded systems." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Portfolio,
 });
@@ -45,7 +47,7 @@ const experiences = [
 ];
 
 const projects = [
-  { title: "LRLACM-02", type: "Professional avionics project", professional: true, tags: ["C", "Embedded C", "Ada", "DO-178C", "LDRA", "Polyspace"], summary: "Embedded software development and validation for an aerospace and defence application.", details: ["Contributed to embedded software development and Verification & Validation activities.", "Performed static analysis and code verification using industry analysis tools.", "Applied DO-178C processes while supporting safety-critical software quality."] },
+  { title: "LRLACM-02", type: "Professional avionics project", professional: true, tags: ["C", "Embedded C", "Ada", "DO-178C", "V&V", "LDRA", "Polyspace"], summary: "Professional aerospace and defence work spanning embedded software development, verification, and validation in a safety-critical environment.", details: ["Developed and validated embedded software using C, Embedded C, and Ada.", "Performed Verification & Validation, static analysis, code verification, debugging, and software validation activities.", "Applied DO-178C development and verification practices using LDRA and Polyspace to support software quality, safety, and reliability."] },
   { title: "Parking Management System", type: "Software project", professional: false, tags: ["Java", "HTML", "CSS", "JavaScript", "SQL"], summary: "A web-based parking automation platform with vehicle logs, slot allocation, and an admin dashboard.", details: ["Implemented vehicle entry and exit record management.", "Built SQL-based storage and improved data retrieval accuracy.", "Reduced manual tracking effort through an administrative workflow."] },
   { title: "Plant Leaf Disease Detection", type: "Machine learning project", professional: false, tags: ["CNN", "Machine Learning", "Deep Learning"], summary: "A CNN model for plant disease classification with more than 95% accuracy.", details: ["Processed the image dataset and trained a convolutional neural network.", "Evaluated classification performance above 95% accuracy.", "Applied deep learning to agricultural disease detection automation."] },
 ];
@@ -118,9 +120,9 @@ function Portfolio() {
           <h1 className="text-balance font-display text-5xl font-semibold leading-[1.04] text-foreground md:text-7xl lg:text-[5.5rem]">Yallaling<br /><span className="text-primary">Avionics</span> Software Engineer<span aria-hidden="true" className="ml-2 inline-block h-[0.8em] w-1 animate-[blink_1s_steps(1)_infinite] bg-primary align-baseline" /></h1>
           <p className="mt-6 max-w-3xl border-l-2 border-primary pl-5 text-base leading-8 text-muted-foreground md:text-lg">Building and verifying safety-critical embedded software with C, C++, Embedded C, and Ada—grounded in DO-178C, V&V, and industry analysis tools.</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Button size="lg" variant="signal" asChild><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> View Resume</a></Button>
+            <Button size="lg" variant="signal" asChild><Link to="/resume"><Download /> View Resume</Link></Button>
             <Button size="lg" variant="console" asChild><a href="#projects">View Projects <ArrowDown /></a></Button>
-            <Button size="lg" variant="ghost" asChild><a href="https://www.linkedin.com/in/yallaling03/" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a></Button>
+            <Button size="lg" variant="ghost" asChild><Link to="/professional-profile"><Linkedin /> Professional Profile</Link></Button>
             <Button size="lg" variant="ghost" asChild><a href="https://github.com/Sensationa" target="_blank" rel="noreferrer"><Github /> GitHub</a></Button>
           </div>
         </div>
