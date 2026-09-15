@@ -110,12 +110,12 @@ function Portfolio() {
     </header>
 
     <main>
-      <section id="home" className="relative mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-7xl items-center px-5 py-16 lg:px-8">
+      <section id="home" className="relative mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-16 lg:min-h-[780px] lg:px-8">
         <div aria-hidden="true" className="absolute right-[8%] top-[15%] hidden size-72 rounded-full border border-primary/15 lg:block"><div className="absolute inset-10 rounded-full border border-primary/20" /><div className="absolute inset-1/3 animate-pulse rounded-full border border-warning/25" /></div>
         <div className="relative max-w-4xl">
           <div className="mb-7 inline-flex items-center gap-2 rounded-sm border border-primary/35 bg-primary/5 px-3 py-2 font-display text-xs text-primary"><span className="size-2 animate-pulse rounded-full bg-primary" /> AVAILABLE FOR ENGINEERING OPPORTUNITIES</div>
           <p className="technical-label mb-4 text-sm text-muted-foreground">Aerospace & Defence · Bengaluru, India</p>
-          <h1 className="text-balance font-display text-5xl font-semibold leading-[1.04] text-foreground md:text-7xl lg:text-[5.5rem]">Yallaling<br /><span className="text-primary">Avionics</span> Software Engineer</h1>
+          <h1 className="text-balance font-display text-5xl font-semibold leading-[1.04] text-foreground md:text-7xl lg:text-[5.5rem]">Yallaling<br /><span className="text-primary">Avionics</span> Software Engineer<span aria-hidden="true" className="ml-2 inline-block h-[0.8em] w-1 animate-[blink_1s_steps(1)_infinite] bg-primary align-baseline" /></h1>
           <p className="mt-6 max-w-3xl border-l-2 border-primary pl-5 text-base leading-8 text-muted-foreground md:text-lg">Building and verifying safety-critical embedded software with C, C++, Embedded C, and Ada—grounded in DO-178C, V&V, and industry analysis tools.</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button size="lg" variant="signal" asChild><a href={resumeAsset.url} target="_blank" rel="noreferrer"><Download /> View Resume</a></Button>
