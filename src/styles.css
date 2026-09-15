@@ -60,6 +60,10 @@
   --signal: oklch(0.81 0.145 195);
   --warning: oklch(0.78 0.17 75);
   --violet: oklch(0.65 0.22 300);
+  --uav-metal: #66818a;
+  --uav-glass: #9ecbd0;
+  --uav-signal: #37e0dc;
+  --uav-dark: #12282f;
 }
 
 @keyframes scan { to { transform: translateY(32px); } }
@@ -101,6 +105,14 @@
 }
 
 @utility text-balance { text-wrap: balance; }
+
+@utility uav-coordinate-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--primary) 7%, transparent) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to left, black, transparent 92%);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
