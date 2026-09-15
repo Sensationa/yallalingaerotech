@@ -112,7 +112,7 @@ function Portfolio() {
       {menuOpen && <div className="border-t border-border bg-background px-5 py-5 lg:hidden">{nav.map((item) => <a key={item} onClick={() => setMenuOpen(false)} href={`#${item.toLowerCase()}`} className="block border-b border-border py-3 font-display text-sm text-muted-foreground">{item}</a>)}</div>}
     </header>
 
-    <main className="relative isolate">
+    <main className="portfolio-content relative isolate">
       <PageAtmosphere />
       <section id="home" className="relative mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-16 lg:min-h-[780px] lg:px-8">
         <HeroUav />

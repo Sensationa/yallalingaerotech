@@ -127,6 +127,11 @@
   pointer-events: none;
 }
 
+.portfolio-content > section {
+  position: relative;
+  z-index: 1;
+}
+
 .ambient-grid {
   position: absolute;
   inset: 0;
@@ -210,7 +215,7 @@
 .ambient-readout-b { top: 78%; right: 4%; }
 
 @media (max-width: 767px) {
-  .page-atmosphere { inset-top: 30rem; }
+  .page-atmosphere { top: 30rem; }
   .ambient-pointer, .ambient-flight-path, .ambient-readout { display: none; }
   .ambient-grid { opacity: 0.3; background-size: 56px 56px; transform: none; }
   .ambient-circuit { width: 58vw; opacity: 0.2; }
