@@ -1,5 +1,4 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Line } from "@react-three/drei";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
@@ -27,10 +26,13 @@ function FlyingWing({ colors, still }: { colors: SceneColors; still: boolean }) 
     geometry.center();
     return geometry;
   }, []);
-  const trail = useMemo(() => Array.from({ length: 44 }, (_, i) => {
-    const x = -10 + i * 0.36;
-    return [x, Math.sin(i * 0.17) * 0.4 - 0.5, -1.7 - i * 0.025] as [number, number, number];
-  }), []);
+  const trail = useMemo(() => {
+    const points = Array.from({ length: 32 }, (_, i) => {
+      const x = -10 + i * 0.5;
+      return new THREE.Vector3(x, Math.sin(i * 0.22) * 0.4 - 0.5, -1.7 - i * 0.035);
+    });
+    return new THREE.BufferGeometry().setFromPoints(points);
+  }, []);
 
   useEffect(() => {
     const onMove = (event: PointerEvent) => {
@@ -56,7 +58,7 @@ function FlyingWing({ colors, still }: { colors: SceneColors; still: boolean }) 
   });
 
   return <>
-    <Line points={trail} color={colors.signal} transparent opacity={0.2} lineWidth={0.65} />
+    <primitive object={new THREE.Line(trail, new THREE.LineBasicMaterial({ color: colors.signal, transparent: true, opacity: 0.2 }))} />
     <group ref={craft} position={[2.4, 0, 0]} rotation={[1.16, -0.34, -0.12]} scale={0.78}>
       <mesh geometry={wing}>
         <meshPhysicalMaterial color={colors.metal} metalness={0.82} roughness={0.3} transparent opacity={0.42} transmission={0.16} thickness={0.25} side={THREE.DoubleSide} />
@@ -80,8 +82,8 @@ function FlyingWing({ colors, still }: { colors: SceneColors; still: boolean }) 
 
 export type { SceneColors };
 
-export default function HeroUavScene({ colors, still }: { colors: SceneColors; still: boolean }) {
-  return <Canvas dpr={1} camera={{ position: [0, 0, 14], fov: 42 }} gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}>
+export default function HeroUavScene({ colors, still, onReady }: { colors: SceneColors; still: boolean; onReady: () => void }) {
+  return <Canvas dpr={1} camera={{ position: [0, 0, 14], fov: 42 }} gl={{ antialias: false, alpha: true, powerPreference: "low-power" }} onCreated={onReady}>
     <ambientLight intensity={0.65} color={colors.glass} />
     <directionalLight position={[4, 7, 8]} intensity={1.25} color={colors.signal} />
     <FlyingWing colors={colors} still={still} />

@@ -20,3 +20,6 @@
 - [x] Replace resume view/download with the attached PDF
 - [x] Fix direct LinkedIn navigation and update the live portfolio link
 - [x] Verify resume, LinkedIn, and portfolio actions
+- [x] Optimize hero layers and PDF for slow connections
+- [x] Add a lightweight 3D scene preloader
+- [x] Recheck resume and LinkedIn navigation
