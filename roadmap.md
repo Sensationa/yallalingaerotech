@@ -14,6 +14,6 @@
 - [x] Verify all new pages, PDF pages, and navigation
 - [x] Add and verify a lightweight 3D UAV hero background with mobile safeguards
 - [x] Extend the interactive aerospace background across the homepage
-- [ ] Add source-backed technical blog and article pages
-- [ ] Add blog discovery links, metadata, and sitemap coverage
-- [ ] Verify blog pages, responsive layouts, metadata, and sitemap
+- [x] Add source-backed technical blog and article pages
+- [x] Add blog discovery links, metadata, and sitemap coverage
+- [x] Verify blog pages, responsive layouts, metadata, and sitemap
