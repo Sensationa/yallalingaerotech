@@ -6,7 +6,7 @@ import { blogPosts } from "@/lib/blog";
 
 const origin = "https://avionics-code-haven.lovable.app";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
