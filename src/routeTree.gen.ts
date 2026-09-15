@@ -10,12 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AerospaceDefenceSoftwareRouteImport } from './routes/aerospace-defence-software'
+import { Route as CareerRouteImport } from './routes/career'
 import { Route as ProfessionalProfileRouteImport } from './routes/professional-profile'
 import { Route as ResumeRouteImport } from './routes/resume'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AerospaceDefenceSoftwareRoute =
+  AerospaceDefenceSoftwareRouteImport.update({
+    id: '/aerospace-defence-software',
+    path: '/aerospace-defence-software',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CareerRoute = CareerRouteImport.update({
+  id: '/career',
+  path: '/career',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfessionalProfileRoute = ProfessionalProfileRouteImport.update({
@@ -31,30 +44,54 @@ const ResumeRoute = ResumeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aerospace-defence-software': typeof AerospaceDefenceSoftwareRoute
+  '/career': typeof CareerRoute
   '/professional-profile': typeof ProfessionalProfileRoute
   '/resume': typeof ResumeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aerospace-defence-software': typeof AerospaceDefenceSoftwareRoute
+  '/career': typeof CareerRoute
   '/professional-profile': typeof ProfessionalProfileRoute
   '/resume': typeof ResumeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aerospace-defence-software': typeof AerospaceDefenceSoftwareRoute
+  '/career': typeof CareerRoute
   '/professional-profile': typeof ProfessionalProfileRoute
   '/resume': typeof ResumeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/professional-profile' | '/resume'
+  fullPaths:
+    | '/'
+    | '/aerospace-defence-software'
+    | '/career'
+    | '/professional-profile'
+    | '/resume'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/professional-profile' | '/resume'
-  id: '__root__' | '/' | '/professional-profile' | '/resume'
+  to:
+    | '/'
+    | '/aerospace-defence-software'
+    | '/career'
+    | '/professional-profile'
+    | '/resume'
+  id:
+    | '__root__'
+    | '/'
+    | '/aerospace-defence-software'
+    | '/career'
+    | '/professional-profile'
+    | '/resume'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AerospaceDefenceSoftwareRoute: typeof AerospaceDefenceSoftwareRoute
+  CareerRoute: typeof CareerRoute
   ProfessionalProfileRoute: typeof ProfessionalProfileRoute
   ResumeRoute: typeof ResumeRoute
 }
@@ -66,6 +103,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aerospace-defence-software': {
+      id: '/aerospace-defence-software'
+      path: '/aerospace-defence-software'
+      fullPath: '/aerospace-defence-software'
+      preLoaderRoute: typeof AerospaceDefenceSoftwareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/career': {
+      id: '/career'
+      path: '/career'
+      fullPath: '/career'
+      preLoaderRoute: typeof CareerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/professional-profile': {
@@ -87,6 +138,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AerospaceDefenceSoftwareRoute: AerospaceDefenceSoftwareRoute,
+  CareerRoute: CareerRoute,
   ProfessionalProfileRoute: ProfessionalProfileRoute,
   ResumeRoute: ResumeRoute,
 }
