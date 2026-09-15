@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { ArrowLeft, Award, BriefcaseBusiness, CheckCircle2, Download, GraduationCap, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import resumeAsset from "@/assets/yallaling-resume.pdf.asset.json";
@@ -75,6 +76,6 @@ function ResumePage() {
   </main>;
 }
 
-function ResumeSection({ icon: Icon, label, title, children }: { icon: typeof Award; label: string; title: string; children: React.ReactNode }) {
+function ResumeSection({ icon: Icon, label, title, children }: { icon: typeof Award; label: string; title: string; children: ReactNode }) {
   return <section className="border-t border-border py-14"><div className="mb-8 flex items-center gap-4"><span className="grid size-10 place-items-center rounded-sm border border-primary/40 bg-primary/10"><Icon className="size-5 text-primary" /></span><div><p className="technical-label text-[10px] text-primary">{label}</p><h2 className="mt-1 font-display text-2xl font-semibold md:text-3xl">{title}</h2></div></div>{children}</section>;
 }
