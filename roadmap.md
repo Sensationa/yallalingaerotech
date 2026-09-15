@@ -19,4 +19,4 @@
 - [x] Verify blog pages, responsive layouts, metadata, and sitemap
 - [x] Replace resume view/download with the attached PDF
 - [x] Fix direct LinkedIn navigation and update the live portfolio link
-- [ ] Verify resume, LinkedIn, and portfolio actions
+- [x] Verify resume, LinkedIn, and portfolio actions
