@@ -89,6 +89,9 @@ function Portfolio() {
   const [activeExperience, setActiveExperience] = useState(0);
   const [openProject, setOpenProject] = useState(0);
   const nav = ["About", "Skills", "Experience", "Projects", "Contact"];
+  const selectedExperience = experiences[activeExperience] ?? experiences[0];
+
+  if (!selectedExperience) return null;
 
   return <div className="min-h-screen overflow-x-hidden">
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
@@ -151,7 +154,7 @@ function Portfolio() {
       <section id="experience" className="border-y border-border bg-card/35 px-5 py-24 lg:px-8 lg:py-32"><div className="mx-auto max-w-7xl"><SectionHeading eyebrow="Career timeline / 03" title="Professional" accent="Experience" />
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="relative space-y-3 before:absolute before:bottom-8 before:left-5 before:top-8 before:w-px before:bg-border">{experiences.map((exp, index) => <button key={exp.company} onClick={() => setActiveExperience(index)} className={`panel relative w-full rounded-md p-5 pl-14 text-left transition-colors ${activeExperience === index ? "signal-border" : "hover:border-primary/35"}`}><span className={`absolute left-[15px] top-7 size-3 rounded-full border-2 ${activeExperience === index ? "border-primary bg-primary" : "border-muted-foreground bg-card"}`} /><span className="flex flex-wrap items-center gap-2">{exp.current && <span className="rounded-sm bg-primary/15 px-2 py-1 font-display text-[10px] text-primary">CURRENT</span>}<span className="text-xs text-muted-foreground">{exp.date}</span></span><strong className="mt-3 block font-display text-lg">{exp.role}</strong><span className="mt-1 block text-sm text-primary">{exp.company}</span></button>)}</div>
-          <article className="panel signal-border rounded-md p-6 md:p-8"><p className="technical-label text-xs text-primary">Selected role</p><h3 className="mt-3 font-display text-2xl font-semibold">{experiences[activeExperience].role}</h3><p className="mt-2 text-sm text-muted-foreground">{experiences[activeExperience].company} · {experiences[activeExperience].date}</p><ul className="mt-7 space-y-4">{experiences[activeExperience].bullets.map((bullet) => <li key={bullet} className="flex gap-3 text-sm leading-6 text-muted-foreground"><CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />{bullet}</li>)}</ul><div className="mt-7 flex flex-wrap gap-2">{experiences[activeExperience].tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}</div></article>
+          <article className="panel signal-border rounded-md p-6 md:p-8"><p className="technical-label text-xs text-primary">Selected role</p><h3 className="mt-3 font-display text-2xl font-semibold">{selectedExperience.role}</h3><p className="mt-2 text-sm text-muted-foreground">{selectedExperience.company} · {selectedExperience.date}</p><ul className="mt-7 space-y-4">{selectedExperience.bullets.map((bullet) => <li key={bullet} className="flex gap-3 text-sm leading-6 text-muted-foreground"><CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />{bullet}</li>)}</ul><div className="mt-7 flex flex-wrap gap-2">{selectedExperience.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}</div></article>
         </div></div>
       </section>
 
