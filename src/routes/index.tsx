@@ -8,7 +8,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { HeroUav } from "@/components/HeroUav";
 import { PageAtmosphere } from "@/components/PageAtmosphere";
-import resumeAsset from "@/assets/Yallaling-Resume.pdf.asset.json";
 
 const linkedInUrl = "https://www.linkedin.com/in/yallaling03/";
 const portfolioUrl = "https://yallalingaerotech.lovable.app";
