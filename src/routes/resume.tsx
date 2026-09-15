@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Award, BriefcaseBusiness, CheckCircle2, Download
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/resume")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Avionics Engineer Resume — Yallaling" },
@@ -12,10 +13,10 @@ export const Route = createFileRoute("/resume")({
       { property: "og:title", content: "Avionics Engineer Resume — Yallaling" },
       { property: "og:description", content: "Embedded avionics experience, DO-178C and V&V skills, education, and certifications." },
       { property: "og:type", content: "profile" },
-      { property: "og:url", content: "/resume" },
+      { property: "og:url", content: "https://avionics-code-haven.lovable.app/resume" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/resume" }],
+    links: [{ rel: "canonical", href: "https://avionics-code-haven.lovable.app/resume" }],
   }),
   component: ResumePage,
 });

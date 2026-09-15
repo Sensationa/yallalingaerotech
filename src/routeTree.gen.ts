@@ -11,9 +11,16 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AerospaceDefenceSoftwareRouteImport } from './routes/aerospace-defence-software'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CareerRouteImport } from './routes/career'
 import { Route as ProfessionalProfileRouteImport } from './routes/professional-profile'
 import { Route as ResumeRouteImport } from './routes/resume'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogAvionicsSoftwareEngineeringRouteImport } from './routes/blog.avionics-software-engineering'
+import { Route as BlogDo178cSoftwareLifecycleRouteImport } from './routes/blog.do-178c-software-lifecycle'
+import { Route as BlogEmbeddedCAvionicsRouteImport } from './routes/blog.embedded-c-avionics'
+import { Route as BlogVerificationValidationAvionicsRouteImport } from './routes/blog.verification-validation-avionics'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -26,6 +33,11 @@ const AerospaceDefenceSoftwareRoute =
     path: '/aerospace-defence-software',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareerRoute = CareerRouteImport.update({
   id: '/career',
   path: '/career',
@@ -41,13 +53,53 @@ const ResumeRoute = ResumeRouteImport.update({
   path: '/resume',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogAvionicsSoftwareEngineeringRoute =
+  BlogAvionicsSoftwareEngineeringRouteImport.update({
+    id: '/avionics-software-engineering',
+    path: '/avionics-software-engineering',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogDo178cSoftwareLifecycleRoute =
+  BlogDo178cSoftwareLifecycleRouteImport.update({
+    id: '/do-178c-software-lifecycle',
+    path: '/do-178c-software-lifecycle',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogEmbeddedCAvionicsRoute = BlogEmbeddedCAvionicsRouteImport.update({
+  id: '/embedded-c-avionics',
+  path: '/embedded-c-avionics',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogVerificationValidationAvionicsRoute =
+  BlogVerificationValidationAvionicsRouteImport.update({
+    id: '/verification-validation-avionics',
+    path: '/verification-validation-avionics',
+    getParentRoute: () => BlogRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aerospace-defence-software': typeof AerospaceDefenceSoftwareRoute
+  '/blog': typeof BlogRouteWithChildren
   '/career': typeof CareerRoute
   '/professional-profile': typeof ProfessionalProfileRoute
   '/resume': typeof ResumeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/avionics-software-engineering': typeof BlogAvionicsSoftwareEngineeringRoute
+  '/blog/do-178c-software-lifecycle': typeof BlogDo178cSoftwareLifecycleRoute
+  '/blog/embedded-c-avionics': typeof BlogEmbeddedCAvionicsRoute
+  '/blog/verification-validation-avionics': typeof BlogVerificationValidationAvionicsRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -55,23 +107,43 @@ export interface FileRoutesByTo {
   '/career': typeof CareerRoute
   '/professional-profile': typeof ProfessionalProfileRoute
   '/resume': typeof ResumeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/avionics-software-engineering': typeof BlogAvionicsSoftwareEngineeringRoute
+  '/blog/do-178c-software-lifecycle': typeof BlogDo178cSoftwareLifecycleRoute
+  '/blog/embedded-c-avionics': typeof BlogEmbeddedCAvionicsRoute
+  '/blog/verification-validation-avionics': typeof BlogVerificationValidationAvionicsRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aerospace-defence-software': typeof AerospaceDefenceSoftwareRoute
+  '/blog': typeof BlogRouteWithChildren
   '/career': typeof CareerRoute
   '/professional-profile': typeof ProfessionalProfileRoute
   '/resume': typeof ResumeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/avionics-software-engineering': typeof BlogAvionicsSoftwareEngineeringRoute
+  '/blog/do-178c-software-lifecycle': typeof BlogDo178cSoftwareLifecycleRoute
+  '/blog/embedded-c-avionics': typeof BlogEmbeddedCAvionicsRoute
+  '/blog/verification-validation-avionics': typeof BlogVerificationValidationAvionicsRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/aerospace-defence-software'
+    | '/blog'
     | '/career'
     | '/professional-profile'
     | '/resume'
+    | '/sitemap.xml'
+    | '/blog/avionics-software-engineering'
+    | '/blog/do-178c-software-lifecycle'
+    | '/blog/embedded-c-avionics'
+    | '/blog/verification-validation-avionics'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -79,21 +151,36 @@ export interface FileRouteTypes {
     | '/career'
     | '/professional-profile'
     | '/resume'
+    | '/sitemap.xml'
+    | '/blog/avionics-software-engineering'
+    | '/blog/do-178c-software-lifecycle'
+    | '/blog/embedded-c-avionics'
+    | '/blog/verification-validation-avionics'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/aerospace-defence-software'
+    | '/blog'
     | '/career'
     | '/professional-profile'
     | '/resume'
+    | '/sitemap.xml'
+    | '/blog/avionics-software-engineering'
+    | '/blog/do-178c-software-lifecycle'
+    | '/blog/embedded-c-avionics'
+    | '/blog/verification-validation-avionics'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AerospaceDefenceSoftwareRoute: typeof AerospaceDefenceSoftwareRoute
+  BlogRoute: typeof BlogRouteWithChildren
   CareerRoute: typeof CareerRoute
   ProfessionalProfileRoute: typeof ProfessionalProfileRoute
   ResumeRoute: typeof ResumeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -110,6 +197,13 @@ declare module '@tanstack/react-router' {
       path: '/aerospace-defence-software'
       fullPath: '/aerospace-defence-software'
       preLoaderRoute: typeof AerospaceDefenceSoftwareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/career': {
@@ -133,15 +227,78 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResumeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/avionics-software-engineering': {
+      id: '/blog/avionics-software-engineering'
+      path: '/avionics-software-engineering'
+      fullPath: '/blog/avionics-software-engineering'
+      preLoaderRoute: typeof BlogAvionicsSoftwareEngineeringRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/do-178c-software-lifecycle': {
+      id: '/blog/do-178c-software-lifecycle'
+      path: '/do-178c-software-lifecycle'
+      fullPath: '/blog/do-178c-software-lifecycle'
+      preLoaderRoute: typeof BlogDo178cSoftwareLifecycleRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/embedded-c-avionics': {
+      id: '/blog/embedded-c-avionics'
+      path: '/embedded-c-avionics'
+      fullPath: '/blog/embedded-c-avionics'
+      preLoaderRoute: typeof BlogEmbeddedCAvionicsRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/verification-validation-avionics': {
+      id: '/blog/verification-validation-avionics'
+      path: '/verification-validation-avionics'
+      fullPath: '/blog/verification-validation-avionics'
+      preLoaderRoute: typeof BlogVerificationValidationAvionicsRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogAvionicsSoftwareEngineeringRoute: typeof BlogAvionicsSoftwareEngineeringRoute
+  BlogDo178cSoftwareLifecycleRoute: typeof BlogDo178cSoftwareLifecycleRoute
+  BlogEmbeddedCAvionicsRoute: typeof BlogEmbeddedCAvionicsRoute
+  BlogVerificationValidationAvionicsRoute: typeof BlogVerificationValidationAvionicsRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogAvionicsSoftwareEngineeringRoute: BlogAvionicsSoftwareEngineeringRoute,
+  BlogDo178cSoftwareLifecycleRoute: BlogDo178cSoftwareLifecycleRoute,
+  BlogEmbeddedCAvionicsRoute: BlogEmbeddedCAvionicsRoute,
+  BlogVerificationValidationAvionicsRoute:
+    BlogVerificationValidationAvionicsRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AerospaceDefenceSoftwareRoute: AerospaceDefenceSoftwareRoute,
+  BlogRoute: BlogRouteWithChildren,
   CareerRoute: CareerRoute,
   ProfessionalProfileRoute: ProfessionalProfileRoute,
   ResumeRoute: ResumeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

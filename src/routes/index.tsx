@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowDown, ArrowRight, Award, BriefcaseBusiness, CheckCircle2, ChevronDown,
+  ArrowDown, ArrowRight, Award, BookOpen, BriefcaseBusiness, CheckCircle2, ChevronDown,
   Code2, Cpu, Download, ExternalLink, Github, GraduationCap, Linkedin,
   Mail, MapPin, Menu, Phone, Radar, ShieldCheck, Terminal, X,
 } from "lucide-react";
@@ -10,6 +10,7 @@ import { HeroUav } from "@/components/HeroUav";
 import { PageAtmosphere } from "@/components/PageAtmosphere";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Avionics Embedded Software Engineer | Yallaling" },
@@ -17,10 +18,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Avionics Embedded Software Engineer | Yallaling" },
       { property: "og:description", content: "Avionics engineering portfolio covering safety-critical embedded software, DO-178C, and V&V." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://avionics-code-haven.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://avionics-code-haven.lovable.app/" }],
   }),
   component: Portfolio,
 });
@@ -125,6 +126,7 @@ function Portfolio() {
             <Button size="lg" variant="signal" asChild><Link to="/resume"><Download /> View Resume</Link></Button>
             <Button size="lg" variant="console" asChild><a href="#projects">View Projects <ArrowDown /></a></Button>
              <Button size="lg" variant="ghost" asChild><Link to="/professional-profile"><Linkedin /> LinkedIn Profile</Link></Button>
+             <Button size="lg" variant="ghost" asChild><Link to="/blog"><BookOpen /> Technical Blog</Link></Button>
             <Button size="lg" variant="ghost" asChild><a href="https://github.com/Sensationa" target="_blank" rel="noreferrer"><Github /> GitHub</a></Button>
           </div>
         </div>
@@ -178,6 +180,6 @@ function Portfolio() {
           ].map(([Icon, label, text, href]) => { const LinkIcon = Icon as typeof Mail; return <a key={String(label)} href={String(href)} target={String(href).startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b border-border pb-4 text-sm hover:text-primary"><LinkIcon className="size-4 text-primary" /><span className="min-w-0"><span className="block text-xs text-muted-foreground">{String(label)}</span><span className="block truncate">{String(text)}</span></span><ArrowRight className="size-4" /></a>; })}</div></div></div></div>
       </section>
     </main>
-     <footer className="border-t border-border px-5 py-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-xs text-muted-foreground sm:flex-row"><span>© 2026 Yallaling. Avionics & Embedded Software Engineer.</span><div className="flex flex-wrap gap-5"><Link to="/aerospace-defence-software" className="hover:text-primary">Aerospace & Defence</Link><Link to="/professional-profile" className="hover:text-primary">Professional Profile</Link><span className="font-display text-primary">SYSTEM STATUS: READY</span></div></div></footer>
+     <footer className="border-t border-border px-5 py-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-xs text-muted-foreground sm:flex-row"><span>© 2026 Yallaling. Avionics & Embedded Software Engineer.</span><div className="flex flex-wrap gap-5"><Link to="/aerospace-defence-software" className="hover:text-primary">Aerospace & Defence</Link><Link to="/blog" className="hover:text-primary">Technical Blog</Link><Link to="/professional-profile" className="hover:text-primary">Professional Profile</Link><span className="font-display text-primary">SYSTEM STATUS: READY</span></div></div></footer>
   </div>;
 }

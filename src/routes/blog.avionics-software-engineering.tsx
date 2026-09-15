@@ -1,0 +1,8 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { BlogArticlePage } from "@/components/BlogArticlePage";
+import { getBlogPost } from "@/lib/blog";
+
+const post = getBlogPost("avionics-software-engineering");
+const url = "https://avionics-code-haven.lovable.app/blog/avionics-software-engineering";
+
+export const Route = createFileRoute("/blog/avionics-software-engineering")({ staticData: { sitemap: true }, head: () => ({ meta: [{ title: "What Avionics Software Engineers Do | Yallaling" }, { name: "description", content: post?.description ?? "Avionics software engineering overview." }, { name: "keywords", content: post?.keywords }, { property: "og:title", content: post?.title }, { property: "og:description", content: post?.excerpt }, { property: "og:type", content: "article" }, { property: "og:url", content: url }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: url }], scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: post?.title, description: post?.description, url, author: { "@type": "Person", name: "Yallaling", jobTitle: "Avionics - Embedded Software Engineer" }, mainEntityOfPage: url }) }, { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://avionics-code-haven.lovable.app/" }, { "@type": "ListItem", position: 2, name: "Blog", item: "https://avionics-code-haven.lovable.app/blog" }, { "@type": "ListItem", position: 3, name: post?.title, item: url }] }) }] }), component: () => post ? <BlogArticlePage post={post} /> : null });
