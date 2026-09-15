@@ -18,10 +18,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Avionics Embedded Software Engineer | Yallaling" },
       { property: "og:description", content: "Avionics engineering portfolio covering safety-critical embedded software, DO-178C, and V&V." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://avionics-code-haven.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://avionics-code-haven.lovable.app/" }],
   }),
   component: Portfolio,
 });

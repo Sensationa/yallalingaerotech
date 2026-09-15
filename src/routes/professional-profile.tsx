@@ -12,10 +12,10 @@ export const Route = createFileRoute("/professional-profile")({
       { property: "og:title", content: "Avionics Engineer Profile — Yallaling" },
       { property: "og:description", content: "Professional avionics profile focused on embedded development, DO-178C, and V&V." },
       { property: "og:type", content: "profile" },
-      { property: "og:url", content: "/professional-profile" },
+      { property: "og:url", content: "https://avionics-code-haven.lovable.app/professional-profile" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/professional-profile" }],
+    links: [{ rel: "canonical", href: "https://avionics-code-haven.lovable.app/professional-profile" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
